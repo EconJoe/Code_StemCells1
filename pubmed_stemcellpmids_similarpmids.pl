@@ -9,7 +9,7 @@ $outpath = "D:\\Research\\Projects\\StemCells\\StemCells2\\Data";
 
 
 open (OUTFILE1, ">$outpath/pubmed_stemcellpmids_similarpmids.txt") or die "Can't open subjects file: pubmed_stemcellpmids_similarpmids.xml";
-print OUTFILE1 "nihpmiddb	nihpmid	linkname	dbto	similarpmid	similarityscore\n";
+print OUTFILE1 "stemcellpmiddb	stemcellpmid	linkname	dbto	similarpmid	similarityscore\n";
 
 $counter=0;
 
