@@ -28,8 +28,9 @@ foreach l of local levels {
 	save `stemcellcore', replace
  }
  
-keep meshid mesh
+keep mesh
+replace mesh=lower(mesh)
 duplicates drop
-sort meshid
+sort mesh
 cd D:\Research\Projects\StemCells\StemCells2\Data
-export delimited using "stemcellcoremeshterms", replace
+export delimited using "stemcellcoremeshterms.txt", delimiter(tab) novarnames replace
