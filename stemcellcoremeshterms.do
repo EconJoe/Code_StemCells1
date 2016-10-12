@@ -31,6 +31,12 @@ foreach l of local levels {
 keep mesh
 replace mesh=lower(mesh)
 duplicates drop
+* Make all words singular
+gen mesh2=regexs(1) if regexm(mesh, "(.*)s$") 
+replace mesh2=mesh if mesh2==""
+drop mesh
+rename mesh2 mesh
+
 sort mesh
 cd D:\Research\Projects\StemCells\StemCells2\Data
 export delimited using "stemcellcoremeshterms.txt", delimiter(tab) novarnames replace
